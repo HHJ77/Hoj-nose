@@ -1,32 +1,49 @@
 <template>
-  <a-calendar />
-  <nav>
-    <router-link to="/">Home</router-link>
-    |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div id="basicLayout">
+    <a-layout style="min-height: 100vh">
+      <a-layout-header class="header">
+        <GlobalHeader />
+      </a-layout-header>
+      <a-layout-content class="content">
+        <router-view />
+      </a-layout-content>
+      <a-layout-footer class="footer">
+        <a href="https://github.com/HHJ77" target="_blank">
+          H77 学习编程 奥利奥利给 To-》2856042536@qq.com
+        </a>
+      </a-layout-footer>
+    </a-layout>
+  </div>
 </template>
+<style scoped>
+#basicLayout {
+}
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#basicLayout .header {
+  margin-bottom: 16px;
+  box-shadow: #eee 1px 1px 5px;
+}
+
+#basicLayout .content {
+  background: linear-gradient(to right, #bbb, #fff);
+  margin-bottom: 16px;
+  padding: 20px;
+}
+
+#basicLayout .footer {
+  background: #efefef;
+  padding: 16px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>
+<script>
+import GlobalHeader from "@/components/GlobalHeader";
+
+export default {
+  components: { GlobalHeader },
+};
+</script>
